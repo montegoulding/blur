@@ -15,7 +15,7 @@
 
  Syntax: blur pRadius, pOldImageDataVariable, pWidth, pHeight, pNewImageDataVariable, [pNewAlphaDataVariable, pFadeOut, pLeftFeather, pTopFeather, pRightFeather, pBottomFeather]
 
- Summary:  Returns the XHTML translation of the markdown document.
+ Summary:  Blur the imageData of an image by a given radius.
 
 
  Parameters:
