@@ -17,6 +17,11 @@
 
  Summary:  Blur the imageData of an image by a given radius.
 
+ Introduced: 8.0
+
+ OS: ios,android,linux,mac,windows
+
+ Platforms: mobile,desktop,server
 
  Parameters:
  pRadius (integer): blur radius
