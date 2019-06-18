@@ -439,8 +439,6 @@ extern "C"
 // External declaration macros
 //
 
-#ifdef _MACOSX
-
 #ifdef __cplusplus
 
 #define EXTERNAL_REFERENCE_LIBRARY \
@@ -460,13 +458,6 @@ void __dummy_function(void) \
 }
 
 #endif
-
-#else
-
-#define EXTERNAL_REFERENCE_LIBRARY
-
-#endif
-
 
 #ifdef __cplusplus
 
