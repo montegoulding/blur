@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B2054DE3179923AB00F83071 /* blur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2CDE3BE1798FC38005CB1A4 /* blur.cpp */; };
-		B2895C5D1BE8BB820009CC81 /* Global.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B2895C5C1BE8BB820009CC81 /* Global.xcconfig */; };
+		B26FFBE422B8B935004A9568 /* blur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2CDE3BE1798FC38005CB1A4 /* blur.cpp */; };
+		B26FFBE522B8B939004A9568 /* external.c in Sources */ = {isa = PBXBuildFile; fileRef = B2CDE3C11798FC4E005CB1A4 /* external.c */; };
 		B2CDE3B71798FB75005CB1A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2CDE3B51798FB75005CB1A4 /* InfoPlist.strings */; };
 		B2CDE3BF1798FC38005CB1A4 /* blur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B2CDE3BE1798FC38005CB1A4 /* blur.cpp */; };
 		B2CDE3C31798FC4E005CB1A4 /* external.c in Sources */ = {isa = PBXBuildFile; fileRef = B2CDE3C11798FC4E005CB1A4 /* external.c */; };
@@ -41,7 +42,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B2895C5C1BE8BB820009CC81 /* Global.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Global.xcconfig; path = ../Global.xcconfig; sourceTree = "<group>"; };
+		B26FFBDB22B731DD004A9568 /* Global.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Global.xcconfig; sourceTree = "<group>"; };
+		B26FFBE022B8B922004A9568 /* blur.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = blur.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2CDE3AD1798FB75005CB1A4 /* blur.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = blur.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2CDE3B41798FB75005CB1A4 /* blur-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "blur-Info.plist"; sourceTree = "<group>"; };
 		B2CDE3B61798FB75005CB1A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -58,6 +60,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B26FFBDD22B8B922004A9568 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B2CDE3AA1798FB75005CB1A4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -88,7 +97,7 @@
 		B2CDE3A41798FB75005CB1A4 = {
 			isa = PBXGroup;
 			children = (
-				B2895C5C1BE8BB820009CC81 /* Global.xcconfig */,
+				B26FFBDB22B731DD004A9568 /* Global.xcconfig */,
 				B2CDE3B21798FB75005CB1A4 /* blur */,
 				B2CDE3CC179909D1005CB1A4 /* Frameworks */,
 				B2CDE3AE1798FB75005CB1A4 /* Products */,
@@ -101,6 +110,7 @@
 				B2CDE3AD1798FB75005CB1A4 /* blur.bundle */,
 				B2CDE3CB179909D1005CB1A4 /* libblur.a */,
 				B2E4D89318811F8700473F5A /* test.app */,
+				B26FFBE022B8B922004A9568 /* blur.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -147,7 +157,34 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		B26FFBDE22B8B922004A9568 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		B26FFBDF22B8B922004A9568 /* blur-Server */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B26FFBE122B8B922004A9568 /* Build configuration list for PBXNativeTarget "blur-Server" */;
+			buildPhases = (
+				B26FFBDC22B8B922004A9568 /* Sources */,
+				B26FFBDD22B8B922004A9568 /* Frameworks */,
+				B26FFBDE22B8B922004A9568 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "blur-Server";
+			productName = "blur-Server";
+			productReference = B26FFBE022B8B922004A9568 /* blur.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
 		B2CDE3AC1798FB75005CB1A4 /* blur-OSX */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B2CDE3BB1798FB75005CB1A4 /* Build configuration list for PBXNativeTarget "blur-OSX" */;
@@ -166,9 +203,9 @@
 			productReference = B2CDE3AD1798FB75005CB1A4 /* blur.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
-		B2CDE3CA179909D1005CB1A4 /* blur */ = {
+		B2CDE3CA179909D1005CB1A4 /* blur-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B2CDE3D6179909D1005CB1A4 /* Build configuration list for PBXNativeTarget "blur" */;
+			buildConfigurationList = B2CDE3D6179909D1005CB1A4 /* Build configuration list for PBXNativeTarget "blur-iOS" */;
 			buildPhases = (
 				B2CDE3C7179909D1005CB1A4 /* Sources */,
 				B2CDE3C8179909D1005CB1A4 /* Frameworks */,
@@ -179,7 +216,7 @@
 			);
 			dependencies = (
 			);
-			name = blur;
+			name = "blur-iOS";
 			productName = blur;
 			productReference = B2CDE3CB179909D1005CB1A4 /* libblur.a */;
 			productType = "com.apple.product-type.library.static";
@@ -211,6 +248,13 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = mergEXT;
+				TargetAttributes = {
+					B26FFBDF22B8B922004A9568 = {
+						CreatedOnToolsVersion = 9.4;
+						DevelopmentTeam = KR649NSGHP;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = B2CDE3A81798FB75005CB1A4 /* Build configuration list for PBXProject "blur" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -225,8 +269,9 @@
 			projectRoot = "";
 			targets = (
 				B2CDE3AC1798FB75005CB1A4 /* blur-OSX */,
-				B2CDE3CA179909D1005CB1A4 /* blur */,
+				B2CDE3CA179909D1005CB1A4 /* blur-iOS */,
 				B2E4D89218811F8700473F5A /* test */,
+				B26FFBDF22B8B922004A9568 /* blur-Server */,
 			);
 		};
 /* End PBXProject section */
@@ -237,7 +282,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2CDE3B71798FB75005CB1A4 /* InfoPlist.strings in Resources */,
-				B2895C5D1BE8BB820009CC81 /* Global.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +337,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B26FFBDC22B8B922004A9568 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B26FFBE522B8B939004A9568 /* external.c in Sources */,
+				B26FFBE422B8B935004A9568 /* blur.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B2CDE3A91798FB75005CB1A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -323,7 +376,7 @@
 /* Begin PBXTargetDependency section */
 		B2E4D8C118811FB500473F5A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B2CDE3CA179909D1005CB1A4 /* blur */;
+			target = B2CDE3CA179909D1005CB1A4 /* blur-iOS */;
 			targetProxy = B2E4D8C018811FB500473F5A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -340,9 +393,102 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B26FFBE222B8B922004A9568 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = KR649NSGHP;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				EXECUTABLE_PREFIX = "";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = blur;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B26FFBE322B8B922004A9568 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = KR649NSGHP;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXECUTABLE_PREFIX = "";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = blur;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		B2CDE3B91798FB75005CB1A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2895C5C1BE8BB820009CC81 /* Global.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -376,7 +522,6 @@
 		};
 		B2CDE3BA1798FB75005CB1A4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2895C5C1BE8BB820009CC81 /* Global.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -432,6 +577,7 @@
 		};
 		B2CDE3D7179909D1005CB1A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B26FFBDB22B731DD004A9568 /* Global.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				DSTROOT = /tmp/blur.dst;
@@ -440,7 +586,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = blur;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
@@ -449,6 +595,7 @@
 		};
 		B2CDE3D8179909D1005CB1A4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B26FFBDB22B731DD004A9568 /* Global.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				DSTROOT = /tmp/blur.dst;
@@ -456,7 +603,7 @@
 				GCC_PREFIX_HEADER = "blur/blur-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = blur;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				VALIDATE_PRODUCT = YES;
@@ -533,6 +680,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B26FFBE122B8B922004A9568 /* Build configuration list for PBXNativeTarget "blur-Server" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B26FFBE222B8B922004A9568 /* Debug */,
+				B26FFBE322B8B922004A9568 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B2CDE3A81798FB75005CB1A4 /* Build configuration list for PBXProject "blur" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -551,7 +707,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B2CDE3D6179909D1005CB1A4 /* Build configuration list for PBXNativeTarget "blur" */ = {
+		B2CDE3D6179909D1005CB1A4 /* Build configuration list for PBXNativeTarget "blur-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B2CDE3D7179909D1005CB1A4 /* Debug */,
